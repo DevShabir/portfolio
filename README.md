@@ -2,6 +2,9 @@
 
 Welcome to my personal portfolio! This website showcases my skills, projects, and journey as a web developer.
 
+Live Demo --------------
+https://devshabir.github.io/portfolio/
+
 ## About
 
 I am an aspiring Full-Stack Developer passionate about building modern, responsive, and user-friendly web applications.
