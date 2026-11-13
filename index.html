@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayed Shabir | Backend Developer &amp; Web Developer</title>
+    <meta name="description"
+        content="Personal portfolio of Sayed Shabir Hossini - IT University Student and Aspiring Backend &amp; Full-Stack Web Developer.">
+    <meta name="author" content="Sayed Shabir Hossini">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sayed Shabir | Backend Developer &amp; Web Developer">
+    <meta property="og:description" content="Explore projects, skills, and services of Sayed Shabir Hossini.">
+    <meta property="og:image" content="images/profile.jpg">
+
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Devicon brand icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+
+    <!-- Custom CSS (Direct Root Path) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <header>
+        <nav id="mainNav" class="navbar navbar-expand-lg fixed-top modern-navbar">
+            <div class="container">
+                <a class="navbar-brand brand-logo d-flex align-items-center gap-2" href="#home">
+                    <span class="brand-badge">&lt;/&gt;</span>
+                    <span class="brand-text">Sayed<span class="text-accent">Shabir</span></span>
+                </a>
+
+                <div class="d-flex align-items-center gap-2 order-lg-3">
+                    <!-- Dark / Light Theme Toggle -->
+                    <button id="themeToggleBtn" class="btn btn-theme-toggle" type="button" aria-label="Toggle theme">
+                        <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+                    </button>
+
+                    <!-- Mobile Hamburger -->
+                    <button class="navbar-toggler border-0 p-1" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse order-lg-2" id="navMenu">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-pills-custom">
+                        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ==================== HERO SECTION ==================== -->
+        <section id="home" class="hero-section d-flex align-items-center">
+            <div class="container">
+                <div class="row align-items-center gy-5">
+                    <div class="col-lg-6 hero-text-col text-center text-lg-start">
+                        <div class="hero-badge mb-3 d-inline-flex align-items-center gap-2">
+                            <span class="status-indicator"></span>
+                            <span>Available for projects &amp; learning opportunities</span>
+                        </div>
+                        <h1 class="hero-title fw-bold">
+                            Hi, I'm <span class="gradient-text">Sayed Shabir</span>
+                        </h1>
+                        <!-- عنوان متحرک با افکت تایپ و پاک‌شدن دوره‌ای -->
+                        <h2 class="hero-subtitle text-secondary-custom fw-semibold mb-3">
+                            <span id="typewriterText"></span><span class="cursor-blink">|</span>
+                        </h2>
+
+                        <!-- پاراگراف کامل و بدون بریدگی -->
+                        <p class="hero-description text-secondary-custom mb-4">
+                            I build modern, responsive and user-focused web applications while continuously improving my
+                            development skills.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-4">
+                            <a href="#projects" class="btn btn-primary-custom">
+                                <i class="bi bi-code-slash me-1"></i> View My Projects
+                            </a>
+                            <a href="#contact" class="btn btn-outline-custom">
+                                <i class="bi bi-chat-dots me-1"></i> Contact Me
+                            </a>
+                            <button type="button" id="downloadCV" class="btn btn-glass-custom">
+                                <i class="bi bi-file-earmark-pdf me-1"></i> Request My CV
+                            </button>
+                        </div>
+
+                        <div class="d-flex gap-3 justify-content-center justify-content-lg-start social-links">
+                            <a href="https://github.com/DevShabir" target="_blank" rel="noopener noreferrer"
+                                class="social-icon" aria-label="GitHub Profile">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="mailto:sayedshabirhossini2@gmail.com" class="social-icon"
+                                aria-label="Email Shabir">
+                                <i class="bi bi-envelope-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Futuristic Ambient Rings & Avatar -->
+                    <div class="col-lg-6 hero-visual-col d-flex justify-content-center">
+                        <div class="profile-container position-relative">
+                            <div class="ambient-ring ring-outer"></div>
+                            <div class="ambient-ring ring-medium"></div>
+                            <div class="ambient-ring ring-inner"></div>
+
+                            <div class="floating-badge badge-top" title="HTML5" aria-hidden="true">
+                                <i class="bi bi-filetype-html"></i>
+                            </div>
+                            <div class="floating-badge badge-top-right" title="React.js" aria-hidden="true">
+                                <i class="devicon-react-original"></i>
+                            </div>
+                            <div class="floating-badge badge-right" title="JavaScript" aria-hidden="true">
+                                <i class="bi bi-filetype-js"></i>
+                            </div>
+                            <div class="floating-badge badge-bottom-right" title="PHP" aria-hidden="true">
+                                <i class="devicon-php-plain"></i>
+                            </div>
+                            <div class="floating-badge badge-bottom" title="Git &amp; GitHub" aria-hidden="true">
+                                <i class="bi bi-git"></i>
+                            </div>
+                            <div class="floating-badge badge-bottom-left" title="Laravel" aria-hidden="true">
+                                <i class="devicon-laravel-original"></i>
+                            </div>
+                            <div class="floating-badge badge-left" title="Full-Stack Development" aria-hidden="true">
+                                <i class="bi bi-layers-fill"></i>
+                            </div>
+                            <div class="floating-badge badge-top-left" title="Backend Architecture" aria-hidden="true">
+                                <i class="bi bi-hdd-network"></i>
+                            </div>
+
+                            <div class="profile-avatar-wrapper">
+                                <img src="images/1.jpg" alt="Sayed Shabir Hossini profile portrait"
+                                    class="profile-avatar"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/400x400/111827/F8FAFC?text=Sayed+Shabir';">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ABOUT SECTION ==================== -->
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="section-header text-center mb-5">
+                    <span class="badge-tag">Get to know me</span>
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle text-secondary-custom">My background, current journey, and future focus
+                    </p>
+                </div>
+
+                <div class="row gy-4 align-items-stretch">
+                    <div class="col-lg-7">
+                        <div class="glass-card p-4 p-md-5 h-100">
+                            <h3 class="h4 mb-3 text-accent">Who I Am &amp; My Journey</h3>
+                            <p class="text-secondary-custom mb-3">
+                                I am an IT university student with an intentional focus on modern web technologies and
+                                backend systems. My passion lies in understanding how data travels reliably between
+                                intuitive user interfaces, secure application backends, and databases.
+                            </p>
+                            <p class="text-secondary-custom mb-3">
+                                I approach software development with discipline and curiosity. Instead of relying solely
+                                on heavy frameworks, I build functional applications with vanilla web fundamentals,
+                                structured relational databases, and clean RESTful API integration.
+                            </p>
+                            <h4 class="h5 mb-2 mt-4 text-accent">Current Focus &amp; Future Vision</h4>
+                            <p class="text-secondary-custom mb-0">
+                                My current objective is to become a strong, dependable Backend Developer by mastering
+                                Node.js, SQL database design, and API architectures, progressively evolving into a
+                                comprehensive Full-Stack Developer.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="glass-card p-4 p-md-5 h-100 d-flex flex-column justify-content-between">
+                            <h3 class="h4 mb-4 text-accent">Quick Information</h3>
+                            <ul class="list-unstyled info-list mb-4">
+                                <li class="d-flex justify-content-between py-2 border-bottom-card">
+                                    <span class="fw-semibold"><i class="bi bi-person me-2 text-accent"></i>Name:</span>
+                                    <span class="text-secondary-custom">Sayed Shabir Hossini</span>
+                                </li>
+                                <li class="d-flex justify-content-between py-2 border-bottom-card">
+                                    <span class="fw-semibold"><i
+                                            class="bi bi-mortarboard me-2 text-accent"></i>Status:</span>
+                                    <span class="text-secondary-custom">IT University Student</span>
+                                </li>
+                                <li class="d-flex justify-content-between py-2 border-bottom-card">
+                                    <span class="fw-semibold"><i
+                                            class="bi bi-building me-2 text-accent"></i>University:</span>
+                                    <span class="text-secondary-custom">Kunduz University</span>
+                                </li>
+                                <li class="d-flex justify-content-between py-2 border-bottom-card">
+                                    <span class="fw-semibold"><i class="bi bi-bullseye me-2 text-accent"></i>Primary
+                                        Goal:</span>
+                                    <span class="text-secondary-custom">Backend Developer</span>
+                                </li>
+                                <li class="d-flex justify-content-between py-2 border-bottom-card">
+                                    <span class="fw-semibold"><i class="bi bi-compass me-2 text-accent"></i>Future
+                                        Goal:</span>
+                                    <span class="text-secondary-custom">Full-Stack Developer</span>
+                                </li>
+                                <li class="d-flex justify-content-between py-2">
+                                    <span class="fw-semibold"><i
+                                            class="bi bi-translate me-2 text-accent"></i>Languages:</span>
+                                    <span class="text-secondary-custom">English, Persian/Dari</span>
+                                </li>
+                            </ul>
+                            <div class="d-grid">
+                                <a href="#contact" class="btn btn-outline-custom w-100">
+                                    <i class="bi bi-envelope-paper me-2"></i>Get In Touch
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SKILLS SECTION ==================== -->
+        <section id="skills" class="section-padding bg-surface-alt">
+            <div class="container">
+                <div class="section-header text-center mb-5">
+                    <span class="badge-tag">Competencies</span>
+                    <h2 class="section-title">Technical Skills</h2>
+                    <p class="section-subtitle text-secondary-custom">Languages, databases, and tools I use and study
+                    </p>
+                </div>
+
+                <div class="row gy-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="glass-card p-4 h-100">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <i class="bi bi-window-fullscreen fs-4 text-accent"></i>
+                                <h3 class="h5 mb-0">Frontend</h3>
+                            </div>
+                            <ul class="list-unstyled skill-item-list mb-0">
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>HTML5 <span>Semantic layouts
+                                        &amp; accessibility</span></li>
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>CSS3 <span>Flexbox, Grid &amp;
+                                        modern styling</span></li>
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>JavaScript <span>ES6+, DOM
+                                        manipulation &amp; Fetch</span></li>
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>Bootstrap <span>Responsive
+                                        layouts &amp; components</span></li>
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>React.js <span>Component
+                                        fundamentals &amp; props</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="glass-card p-4 h-100">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <i class="bi bi-server fs-4 text-accent"></i>
+                                <h3 class="h5 mb-0">Backend</h3>
+                            </div>
+                            <ul class="list-unstyled skill-item-list mb-0">
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>PHP <span>Server runtime
+                                        &amp; modules</span></li>
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>Laravel <span>PHP web
+                                        application framework</span></li>
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>Node.js <span>Server runtime
+                                        &amp; modules</span></li>
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>REST APIs <span>HTTP routing
+                                        &amp; request methods</span></li>
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>JSON <span>Data modeling &amp;
+                                        serialization</span></li>
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>Async I/O <span>Promises &amp;
+                                        async/await patterns</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="glass-card p-4 h-100">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <i class="bi bi-database fs-4 text-accent"></i>
+                                <h3 class="h5 mb-0">Database</h3>
+                            </div>
+                            <ul class="list-unstyled skill-item-list mb-0">
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>SQL <span>Structured queries
+                                        &amp; table joins</span></li>
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>MySQL <span>Relational data
+                                        schemas</span></li>
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>SQLite <span>Local &amp;
+                                        embedded application data</span></li>
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>Data Modeling <span>Relational
+                                        design fundamentals</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="glass-card p-4 h-100">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <i class="bi bi-tools fs-4 text-accent"></i>
+                                <h3 class="h5 mb-0">Tools</h3>
+                            </div>
+                            <ul class="list-unstyled skill-item-list mb-0">
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>Git <span>Branching, commits
+                                        &amp; workflows</span></li>
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>GitHub <span>Version control
+                                        &amp; page hosting</span></li>
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>VS Code <span>Extensions,
+                                        linting &amp; debugging</span></li>
+                                <li><i class="bi bi-check2-circle me-2 text-accent"></i>Vite <span>Fast project
+                                        bundling</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PROJECTS SECTION ==================== -->
+        <section id="projects" class="section-padding">
+            <div class="container">
+                <div class="section-header text-center mb-5">
+                    <span class="badge-tag">Portfolio</span>
+                    <h2 class="section-title">Projects</h2>
+                    <p class="section-subtitle text-secondary-custom">Applications and systems built during my
+                        development path</p>
+                </div>
+
+                <!-- Rendered dynamically by main.js -->
+                <div class="row gy-4" id="projectsContainer"></div>
+            </div>
+        </section>
+
+        <!-- ==================== SERVICES SECTION ==================== -->
+        <section id="services" class="section-padding bg-surface-alt">
+            <div class="container">
+                <div class="section-header text-center mb-5">
+                    <span class="badge-tag">Services</span>
+                    <h2 class="section-title">What I Do</h2>
+                    <p class="section-subtitle text-secondary-custom">Realistic, dependable development services</p>
+                </div>
+
+                <div class="row gy-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="glass-card p-4 h-100">
+                            <div class="service-icon mb-3"><i class="bi bi-globe"></i></div>
+                            <h3 class="h5 mb-2">Web Development</h3>
+                            <p class="text-secondary-custom mb-0">Building modern responsive websites using clean
+                                semantic markup and modern CSS.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="glass-card p-4 h-100">
+                            <div class="service-icon mb-3"><i class="bi bi-laptop"></i></div>
+                            <h3 class="h5 mb-2">Frontend Development</h3>
+                            <p class="text-secondary-custom mb-0">Creating clean and responsive user interfaces with
+                                accessible Bootstrap structures.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="glass-card p-4 h-100">
+                            <div class="service-icon mb-3"><i class="bi bi-code-square"></i></div>
+                            <h3 class="h5 mb-2">JavaScript Development</h3>
+                            <p class="text-secondary-custom mb-0">Building interactive client-side web applications with
+                                vanilla ES6+ logic.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-6">
+                        <div class="glass-card p-4 h-100">
+                            <div class="service-icon mb-3"><i class="bi bi-plug"></i></div>
+                            <h3 class="h5 mb-2">API Integration</h3>
+                            <p class="text-secondary-custom mb-0">Connecting web applications with REST APIs via
+                                structured JSON requests and responses.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-6">
+                        <div class="glass-card p-4 h-100">
+                            <div class="service-icon mb-3"><i class="bi bi-speedometer2"></i></div>
+                            <h3 class="h5 mb-2">Dashboard Development</h3>
+                            <p class="text-secondary-custom mb-0">Creating modern administrative dashboards with
+                                structured data views and responsive tables.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== EDUCATION SECTION ==================== -->
+        <section id="education" class="section-padding">
+            <div class="container">
+                <div class="section-header text-center mb-5">
+                    <span class="badge-tag">Milestones</span>
+                    <h2 class="section-title">Education &amp; Progress</h2>
+                    <p class="section-subtitle text-secondary-custom">Academic foundation and self-directed software
+                        progress</p>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="timeline-wrapper">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content glass-card p-4">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-2">
+                                        <h3 class="h5 mb-0 text-accent">University IT Department</h3>
+                                        <span class="badge bg-dark-subtle border text-secondary-custom">In
+                                            Progress</span>
+                                    </div>
+                                    <p class="text-secondary-custom small mb-0">
+                                        Pursuing computer science and information technology studies with focus on
+                                        software concepts and algorithms.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content glass-card p-4">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-2">
+                                        <h3 class="h5 mb-0 text-accent">Web Development Learning</h3>
+                                        <span
+                                            class="badge bg-dark-subtle border text-secondary-custom">Continuous</span>
+                                    </div>
+                                    <p class="fw-semibold text-secondary-custom mb-1">Frontend Engineering &amp; UI
+                                        Design</p>
+                                    <p class="text-secondary-custom small mb-0">
+                                        Studying responsive design principles, modular JavaScript, CSS glassmorphism,
+                                        and performance optimization.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content glass-card p-4">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-2">
+                                        <h3 class="h5 mb-0 text-accent">Backend &amp; Database Projects</h3>
+                                        <span class="badge bg-dark-subtle border text-secondary-custom">Current
+                                            Focus</span>
+                                    </div>
+                                    <p class="fw-semibold text-secondary-custom mb-1">Node.js, SQL, and RESTful Design
+                                    </p>
+                                    <p class="text-secondary-custom small mb-0">
+                                        Designing relational databases (MySQL, SQLite), building API endpoints, and
+                                        handling server-side data workflows.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content glass-card p-4">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-2">
+                                        <h3 class="h5 mb-0 text-accent">Future Full-Stack Goal</h3>
+                                        <span class="badge bg-dark-subtle border text-secondary-custom">Future
+                                            Horizon</span>
+                                    </div>
+                                    <p class="fw-semibold text-secondary-custom mb-1">Full-Stack Software Development
+                                    </p>
+                                    <p class="text-secondary-custom small mb-0">
+                                        Striving to integrate scalable server architectures, secure backends, and
+                                        responsive client interfaces into complete web products.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTACT SECTION ==================== -->
+        <section id="contact" class="section-padding bg-surface-alt">
+            <div class="container">
+                <div class="section-header text-center mb-5">
+                    <span class="badge-tag">Communication</span>
+                    <h2 class="section-title">Contact Me</h2>
+                    <p class="section-subtitle text-secondary-custom">Send an inquiry, give feedback, or discuss
+                        collaboration</p>
+                </div>
+
+                <div class="row gy-4">
+                    <div class="col-lg-5">
+                        <div class="d-flex flex-column gap-3 h-100 justify-content-between">
+                            <div class="glass-card p-4 d-flex align-items-center gap-3">
+                                <div class="contact-icon"><i class="bi bi-envelope"></i></div>
+                                <div>
+                                    <div class="small text-secondary-custom">Email</div>
+                                    <a href="mailto:sayedshabirhossini2@gmail.com"
+                                        class="text-decoration-none text-light fw-medium">sayedshabirhossini2@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="glass-card p-4 d-flex align-items-center gap-3">
+                                <div class="contact-icon"><i class="bi bi-github"></i></div>
+                                <div>
+                                    <div class="small text-secondary-custom">GitHub</div>
+                                    <a href="https://github.com/DevShabir" target="_blank" rel="noopener noreferrer"
+                                        class="text-decoration-none text-light fw-medium">github.com/DevShabir</a>
+                                </div>
+                            </div>
+
+                            <div class="glass-card p-4 d-flex align-items-center gap-3">
+                                <div class="contact-icon"><i class="bi bi-whatsapp"></i></div>
+                                <div>
+                                    <div class="small text-secondary-custom">WhatsApp</div>
+                                    <a href="https://wa.me/93728231181" target="_blank" rel="noopener noreferrer"
+                                        class="text-decoration-none text-light fw-medium">+93 728 231 181</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="glass-card p-4 p-md-5">
+                            <div id="formAlertPlaceholder" aria-live="polite" aria-atomic="true"></div>
+
+                            <!-- Replace YOUR_FORM_ID with the form ID provided by Formspree. -->
+                            <form id="contactForm" action="https://formspree.io/f/xrpqekny" method="POST" novalidate>
+                                <input type="text" name="_gotcha" class="visually-hidden" tabindex="-1"
+                                    autocomplete="off" aria-hidden="true">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="contactName" class="form-label">Name</label>
+                                        <input type="text" class="form-control modern-input" id="contactName"
+                                            name="name" placeholder="Sayed Shabir" autocomplete="name" required>
+                                        <div class="invalid-feedback">Please enter your name.</div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="contactEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control modern-input" id="contactEmail"
+                                            name="email" placeholder="name@example.com" autocomplete="email" required>
+                                        <div class="invalid-feedback">Please provide a valid email address.</div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="contactSubject" class="form-label">Subject</label>
+                                        <input type="text" class="form-control modern-input" id="contactSubject"
+                                            name="subject" placeholder="Inquiry / Feedback" required>
+                                        <div class="invalid-feedback">Please enter a subject.</div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="contactMessage" class="form-label">Message</label>
+                                        <textarea class="form-control modern-input" id="contactMessage" rows="5"
+                                            name="message" placeholder="Write your message here..." required></textarea>
+                                        <div class="invalid-feedback">Please write a message.</div>
+                                    </div>
+
+                                    <div class="col-12 mt-4">
+                                        <button type="submit" class="btn btn-primary-custom w-100 py-2" id="submitBtn">
+                                            <i class="bi bi-send-fill me-2"></i>Send Message
+                                        </button>
+                                        <small class="text-secondary-custom d-block mt-2 text-center">
+                                            Your message will be sent directly to my inbox.
+                                        </small>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer py-4 border-top border-secondary-subtle">
+        <div class="container text-center">
+            <div class="d-flex justify-content-center gap-3 mb-3">
+                <a href="https://github.com/DevShabir" target="_blank" rel="noopener noreferrer" class="social-icon"
+                    aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="mailto:sayedshabirhossini2@gmail.com" class="social-icon" aria-label="Email"><i
+                        class="bi bi-envelope"></i></a>
+            </div>
+            <p class="text-secondary-custom small mb-0">
+                &copy; <span id="currentYear"></span> Sayed Shabir Hossini. Built with HTML5, CSS3 &amp; Vanilla
+                JavaScript.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ==================== PROJECT DETAILS MODAL ==================== -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content glass-modal">
+                <div class="modal-header border-0 pb-0">
+                    <h1 class="modal-title fs-5" id="projectModalLabel">Project Details</h1>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4" id="projectModalBody"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap 5 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- Main JavaScript File -->
+    <script src="main.js"></script>
+    <script src="cv.js"></script>
+</body>
+
+</html>

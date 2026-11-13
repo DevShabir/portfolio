@@ -1,0 +1,928 @@
+/* ==========================================================================
+   1. CSS Variables & Design Tokens (Dark & Refined Light Mode)
+   ========================================================================== */
+:root {
+  /* Brand Palettes */
+  --primary: #3262A8;
+  --secondary: #7532A8;
+  --primary-glow: rgba(50, 98, 168, 0.4);
+  --secondary-glow: rgba(117, 50, 168, 0.35);
+
+  /* Dark Theme Colors */
+  --bg-main: #0B0F19;
+  --bg-surface: #111827;
+  --bg-surface-alt: #0D1322;
+  --text-main: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-accent: #60A5FA;
+
+  /* Glassmorphic values */
+  --glass-bg: rgba(17, 24, 39, 0.56);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --glass-hover-border: rgba(96, 165, 250, 0.5);
+  --section-glass: rgba(13, 19, 34, 0.48);
+  --ambient-glow-1: rgba(50, 98, 168, 0.18);
+  --ambient-glow-2: rgba(117, 50, 168, 0.14);
+
+  /* Inputs & Forms */
+  --input-bg: rgba(11, 15, 25, 0.75);
+  --input-border: rgba(255, 255, 255, 0.12);
+
+  /* Icon Surfaces */
+  --icon-box-bg: rgba(50, 98, 168, 0.18);
+  --icon-box-border: rgba(96, 165, 250, 0.3);
+  --icon-color: #60A5FA;
+
+  /* Rings & Glows (Dark Mode - Neon/Luminous) */
+  --ring-color-1: rgba(96, 165, 250, 0.9);
+  --ring-color-2: rgba(192, 132, 252, 0.85);
+  --ring-color-3: rgba(56, 189, 248, 0.8);
+  --ring-glow-1: rgba(96, 165, 250, 0.45);
+  --ring-glow-2: rgba(192, 132, 252, 0.45);
+
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   2. Premium Light Mode Overrides (Polished UX & High Contrast)
+   ========================================================================== */
+[data-bs-theme="light"] {
+  --bg-main: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-surface-alt: #EDF2F7;
+  --text-main: #0F172A;
+  --text-secondary: #475569;
+  --text-accent: #2563EB;
+
+  /* Refined Glassmorphic for Light Mode */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(226, 232, 240, 0.9);
+  --glass-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.07), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
+  --glass-hover-border: rgba(37, 99, 235, 0.5);
+  --section-glass: rgba(237, 242, 247, 0.58);
+  --ambient-glow-1: rgba(37, 99, 235, 0.1);
+  --ambient-glow-2: rgba(126, 34, 206, 0.08);
+
+  /* Inputs */
+  --input-bg: #FFFFFF;
+  --input-border: #CBD5E1;
+
+  /* Vibrant Icon Stylings in Light Mode */
+  --icon-box-bg: rgba(37, 99, 235, 0.1);
+  --icon-box-border: rgba(37, 99, 235, 0.25);
+  --icon-color: #2563EB;
+
+  /* Rings & Glows (Light Mode - Vivid & High Contrast) */
+  --ring-color-1: rgba(37, 99, 235, 0.95);
+  --ring-color-2: rgba(126, 34, 206, 0.9);
+  --ring-color-3: rgba(2, 132, 199, 0.85);
+  --ring-glow-1: rgba(37, 99, 235, 0.25);
+  --ring-glow-2: rgba(126, 34, 206, 0.25);
+}
+
+/* ==========================================================================
+   3. Base Styles & Typography
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-main);
+  background-image:
+    radial-gradient(ellipse at 12% 8%, var(--ambient-glow-1), transparent 34rem),
+    radial-gradient(ellipse at 88% 28%, var(--ambient-glow-2), transparent 38rem);
+  background-attachment: fixed;
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.text-secondary-custom {
+  color: var(--text-secondary) !important;
+}
+
+.text-accent {
+  color: var(--text-accent) !important;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-surface-alt {
+  background: linear-gradient(135deg, var(--section-glass), transparent 85%);
+  border-block: 1px solid var(--glass-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.3s ease;
+}
+
+.section-padding {
+  padding: 5.5rem 0;
+}
+
+.badge-tag {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  background: rgba(50, 98, 168, 0.12);
+  color: var(--text-accent);
+  border: 1px solid var(--icon-box-border);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   4. Glassmorphic Cards & Elevational Polish
+   ========================================================================== */
+.glass-card {
+  background: var(--glass-bg);
+  background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.075), transparent 42%);
+  backdrop-filter: blur(22px) saturate(145%);
+  -webkit-backdrop-filter: blur(22px) saturate(145%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 1rem;
+  box-shadow: var(--glass-shadow);
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.2, 0.75, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-bs-theme="light"] .glass-card {
+  background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.36));
+  border-color: rgba(255, 255, 255, 0.88);
+}
+
+.glass-card:hover {
+  border-color: var(--glass-hover-border);
+  transform: perspective(1000px) translateY(-7px) rotateX(2deg) rotateY(-1deg);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+}
+
+[data-bs-theme="dark"] .glass-card:hover {
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.48), 0 0 24px rgba(96, 165, 250, 0.1);
+}
+
+.border-bottom-card {
+  border-bottom: 1px solid var(--glass-border);
+}
+
+/* ==========================================================================
+   5. Navbar
+   ========================================================================== */
+.modern-navbar {
+  background: rgba(11, 15, 25, 0.24);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  padding: 1rem 0;
+  transition: var(--transition-smooth);
+  border-bottom: 1px solid transparent;
+}
+
+.modern-navbar.scrolled {
+  background: var(--glass-bg);
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+[data-bs-theme="light"] .modern-navbar {
+  background: rgba(248, 250, 252, 0.5);
+}
+
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(50, 98, 168, 0.3);
+}
+
+.brand-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.nav-pills-custom .nav-link {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.45rem 0.95rem;
+  border-radius: 0.5rem;
+  transition: var(--transition-smooth);
+}
+
+.nav-pills-custom .nav-link:hover,
+.nav-pills-custom .nav-link.active {
+  color: var(--text-main);
+  background: var(--icon-box-bg);
+}
+
+.btn-theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--icon-color);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: var(--transition-smooth);
+}
+
+.btn-theme-toggle:hover {
+  color: var(--text-main);
+  border-color: var(--primary);
+  transform: rotate(20deg);
+}
+
+/* ==========================================================================
+   6. Hero Section & Typewriter Effects
+   ========================================================================== */
+.hero-section {
+  min-height: 100vh;
+  padding-top: 6.5rem;
+  padding-bottom: 3.5rem;
+  position: relative;
+  isolation: isolate;
+  perspective: 1200px;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: min(58vw, 46rem);
+  aspect-ratio: 1;
+  top: 4%;
+  right: -14%;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--ambient-glow-1), transparent 68%);
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.hero-text-col {
+  transform: translateZ(24px);
+}
+
+.hero-title {
+  font-size: 3.1rem;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.hero-badge {
+  background: var(--icon-box-bg);
+  border: 1px solid var(--icon-box-border);
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  color: var(--text-accent);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10B981;
+  display: inline-block;
+  box-shadow: 0 0 8px #10B981;
+}
+
+/* --- Typewriter Effect for Title & Paragraph --- */
+.typewriter-wrapper {
+  display: inline-block;
+}
+
+/* مکان‌نمای چشمک‌زن برای افکت تایپ */
+.cursor-blink {
+  display: inline-block;
+  color: var(--text-accent);
+  font-weight: 300;
+  margin-left: 2px;
+  animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.hero-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.hero-subtitle {
+  font-size: 1.35rem;
+}
+
+
+
+
+@keyframes typingTitle {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes typingDesc {
+  0% { width: 0; opacity: 1; }
+  100% { width: 100%; opacity: 1; }
+}
+
+@keyframes blinkCursor {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--text-accent); }
+}
+
+/* ==========================================================================
+   7. Prominent, Permanent, and Futuristic Rotating Profile Rings
+   ========================================================================== */
+.profile-container {
+  width: 460px;
+  height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 28px 32px rgba(0, 0, 0, 0.18));
+}
+
+.profile-avatar-wrapper {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 0 35px var(--ring-glow-1);
+  border: 4px solid rgba(255, 255, 255, 0.25);
+  background: var(--bg-surface);
+  transform: translateZ(32px);
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .profile-container:hover .profile-avatar-wrapper {
+    transform: translateZ(52px) rotateY(-5deg) rotateX(3deg);
+    box-shadow: 0 0 48px var(--ring-glow-1);
+  }
+}
+
+[data-bs-theme="light"] .profile-avatar-wrapper {
+  border-color: #FFFFFF;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Always-rotating decorative ambient rings (Image does not rotate) */
+.ambient-ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+/* Outer Ring */
+.ring-outer {
+  width: 440px;
+  height: 440px;
+  border: 2.5px dashed var(--ring-color-2);
+  box-shadow: 0 0 20px var(--ring-glow-2), inset 0 0 15px var(--ring-glow-2);
+  animation: orbitOuter 26s linear infinite;
+}
+
+/* Medium Ring */
+.ring-medium {
+  width: 350px;
+  height: 350px;
+  border: 2px dotted var(--ring-color-1);
+  box-shadow: 0 0 18px var(--ring-glow-1);
+  animation: orbitMiddle 18s linear infinite;
+}
+
+/* Inner Ring */
+.ring-inner {
+  width: 270px;
+  height: 270px;
+  border: 2px solid var(--ring-color-3);
+  box-shadow: 0 0 22px var(--ring-glow-1);
+  animation: orbitInner 12s linear infinite;
+}
+
+/* Floating Badges Around the Profile */
+.floating-badge {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1.5px solid var(--ring-color-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  color: var(--ring-color-1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  z-index: 4;
+  animation: floatSlow 5s ease-in-out infinite alternate;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transform-style: preserve-3d;
+}
+
+.badge-top         { top: 2%; left: calc(50% - 23px); }
+.badge-top-right   { top: 15%; right: 8%; animation-delay: -0.6s; }
+.badge-right       { top: calc(50% - 23px); right: 2%; animation-delay: -1.2s; }
+.badge-bottom-right { bottom: 15%; right: 8%; animation-delay: -1.8s; }
+.badge-bottom      { bottom: 2%; left: calc(50% - 23px); animation-delay: -2.4s; }
+.badge-bottom-left { bottom: 15%; left: 8%; animation-delay: -3s; }
+.badge-left        { top: calc(50% - 23px); left: 2%; animation-delay: -3.6s; }
+.badge-top-left    { top: 15%; left: 8%; animation-delay: -4.2s; }
+
+/* Continuous Rotation Keyframes */
+@keyframes orbitOuter {
+  0%   { transform: rotateX(66deg) rotateZ(0deg); }
+  100% { transform: rotateX(66deg) rotateZ(360deg); }
+}
+
+@keyframes orbitMiddle {
+  0%   { transform: rotateY(62deg) rotateZ(0deg); }
+  100% { transform: rotateY(62deg) rotateZ(-360deg); }
+}
+
+@keyframes orbitInner {
+  0%   { transform: rotateX(32deg) rotateZ(0deg); }
+  100% { transform: rotateX(32deg) rotateZ(360deg); }
+}
+
+@keyframes floatSlow {
+  0%   { transform: translate3d(0, 0, 24px); }
+  100% { transform: translate3d(0, -12px, 42px); }
+}
+
+/* ==========================================================================
+   8. Buttons & Social Links
+   ========================================================================== */
+.btn-primary-custom {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: #FFFFFF;
+  font-weight: 600;
+  border: none;
+  padding: 0.65rem 1.4rem;
+  border-radius: 0.6rem;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 14px var(--primary-glow);
+}
+
+.btn-primary-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--primary-glow);
+  color: #FFFFFF;
+}
+
+.btn-outline-custom {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--glass-border);
+  padding: 0.65rem 1.4rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+[data-bs-theme="light"] .btn-outline-custom {
+  border-color: #CBD5E1;
+}
+
+.btn-outline-custom:hover {
+  border-color: var(--primary);
+  background: var(--icon-box-bg);
+  color: var(--text-accent);
+  transform: translateY(-2px);
+}
+
+.btn-glass-custom {
+  background: var(--glass-bg);
+  color: var(--text-main);
+  border: 1px solid var(--glass-border);
+  padding: 0.65rem 1.4rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+[data-bs-theme="light"] .btn-glass-custom {
+  border-color: #CBD5E1;
+}
+
+.btn-glass-custom:hover {
+  border-color: var(--primary);
+  color: var(--text-accent);
+  transform: translateY(-2px);
+}
+
+.social-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--icon-color);
+  font-size: 1.2rem;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  box-shadow: var(--glass-shadow);
+}
+
+.social-icon:hover {
+  color: #FFFFFF;
+  background: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   9. Cards, Skills & Services Iconography (Light & Dark Polish)
+   ========================================================================== */
+.skill-item-list li {
+  padding: 0.5rem 0;
+  font-size: 0.92rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-item-list li span {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-left: 1.7rem;
+}
+
+.skill-item-list i {
+  color: var(--icon-color) !important;
+}
+
+.project-card {
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transform-origin: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover {
+    transform: perspective(1100px) translateY(-9px) rotateX(3deg) rotateY(-2deg);
+  }
+}
+
+.project-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.65rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.project-status-completed {
+  color: #4ADE80;
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(74, 222, 128, 0.3);
+}
+
+.project-status-in-development {
+  color: #FBBF24;
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+.project-status-coming-soon {
+  color: #60A5FA;
+  background: rgba(59, 130, 246, 0.12);
+  border-color: rgba(96, 165, 250, 0.3);
+}
+
+.project-status-unknown {
+  color: var(--text-secondary);
+  background: var(--bg-surface-alt);
+  border-color: var(--glass-border);
+}
+
+[data-bs-theme="light"] .project-status-completed {
+  color: #15803D;
+}
+
+[data-bs-theme="light"] .project-status-in-development {
+  color: #B45309;
+}
+
+[data-bs-theme="light"] .project-status-coming-soon {
+  color: #1D4ED8;
+}
+
+.project-actions .view-details-btn {
+  flex: 1 1 100%;
+}
+
+.project-link-btn {
+  display: inline-flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.project-link-unavailable,
+.project-link-unavailable:hover,
+.project-link-unavailable:focus {
+  cursor: not-allowed;
+  opacity: 0.58;
+  transform: none;
+  box-shadow: none;
+}
+
+.project-img-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background-color: var(--bg-surface-alt);
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
+}
+
+.tech-tag {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  background: var(--icon-box-bg);
+  color: var(--text-accent);
+  border: 1px solid var(--icon-box-border);
+  font-weight: 500;
+}
+
+/* Service Box Icons */
+.service-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: var(--icon-box-bg);
+  border: 1px solid var(--icon-box-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: var(--icon-color);
+  transition: var(--transition-smooth);
+}
+
+.glass-card:hover .service-icon {
+  background: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+  transform: scale(1.08);
+}
+
+/* ==========================================================================
+   10. Education Timeline
+   ========================================================================== */
+.timeline-wrapper {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 15px;
+  bottom: 15px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -2rem;
+  top: 18px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg-main);
+  border: 3px solid var(--primary);
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+/* ==========================================================================
+   11. Contact Form & Inputs
+   ========================================================================== */
+.modern-input {
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--text-main);
+  border-radius: 0.6rem;
+  padding: 0.75rem 1rem;
+  transition: var(--transition-smooth);
+}
+
+.modern-input:focus {
+  background: var(--input-bg);
+  border-color: var(--primary);
+  color: var(--text-main);
+  box-shadow: 0 0 0 0.25rem var(--primary-glow);
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: var(--icon-box-bg);
+  border: 1px solid var(--icon-box-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--icon-color);
+  flex-shrink: 0;
+  transition: var(--transition-smooth);
+}
+
+.glass-card:hover .contact-icon {
+  background: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+}
+
+.glass-modal {
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  border: 1px solid var(--glass-border);
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+[data-bs-theme="light"] .btn-close-white {
+  filter: none;
+}
+
+/* ==========================================================================
+   12. Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .hero-section {
+    padding-top: 6rem;
+  }
+  
+  .profile-container {
+    width: 370px;
+    height: 370px;
+    margin-top: 1.5rem;
+  }
+
+  .ring-outer  { width: 360px; height: 360px; }
+  .ring-medium { width: 290px; height: 290px; }
+  .ring-inner  { width: 230px; height: 230px; }
+  .profile-avatar-wrapper { width: 175px; height: 175px; }
+
+  .navbar-collapse {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin-top: 0.75rem;
+    backdrop-filter: blur(22px) saturate(145%);
+    -webkit-backdrop-filter: blur(22px) saturate(145%);
+  }
+}
+
+@media (hover: none) {
+  .glass-card:hover,
+  .project-card:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Allow text to wrap cleanly on mobile screens if screen is too narrow */
+  .typewriter-text,
+  .typewriter-desc {
+    white-space: normal;
+    border-right: none;
+    width: 100% !important;
+    opacity: 1 !important;
+    animation: none !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-title {
+    font-size: 2.25rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .profile-container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .ring-outer  { width: 295px; height: 295px; }
+  .ring-medium { width: 240px; height: 240px; }
+  .ring-inner  { width: 190px; height: 190px; }
+  .profile-avatar-wrapper { width: 145px; height: 145px; }
+  .floating-badge { width: 38px; height: 38px; font-size: 1.05rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .typewriter-text, .typewriter-desc {
+    white-space: normal;
+    border-right: none;
+    width: auto !important;
+    opacity: 1 !important;
+  }
+}
+/* Toast Notification Glass Style */
+.toast.glass-card {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+}
+
+[data-bs-theme="light"] .toast.glass-card {
+  background: #FFFFFF !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
